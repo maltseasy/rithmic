@@ -1,0 +1,341 @@
+[2025-01-17 15:57:38,804] INFO - ==== Starting Ionq Options Model ====
+[2025-01-17 15:57:38,805] INFO - Connecting to IBKR at host=127.0.0.1, port=7496, clientId=101...
+[2025-01-17 15:57:39,276] INFO - Historical data loaded. Rows: 502 from 2023-01-19 00:00:00 to 2025-01-17 00:00:00
+[2025-01-17 15:57:39,277] INFO - Fundamentals data loaded with columns: ['NPRICE', 'NHIG', 'NLOW', 'PDATE', 'VOL10DAVG', 'EV', 'MKTCAP', 'TTMREV', 'TTMEBITD', 'TTMNIAC', 'TTMEPSXCLX', 'TTMREVPS', 'QBVPS', 'QCSHPS', 'TTMCFSHR', 'TTMDIVSHR', 'TTMGROSMGN', 'TTMROEPCT', 'TTMPR2REV', 'PRICE2BK', 'Employees', 'FORECAST_ConsRecom', 'FORECAST_TargetPrice', 'FORECAST_ProjPE', 'FORECAST_ProjSales', 'FORECAST_ProjSalesQ', 'FORECAST_ProjEPS', 'FORECAST_ProjEPSQ', 'FORECAST_ProjProfit', 'FORECAST_ProjDPS', 'CompanyName', 'SharesOutstanding', 'FloatShares']
+[2025-01-17 15:57:39,285] INFO - Macro data loaded. Rows: 25767
+[2025-01-17 15:57:39,289] INFO - Merged + feature-engineered DataFrame shape: (443, 44)
+[2025-01-17 15:57:39,289] INFO - Calibrated daily log-return: mu=0.00484, sigma=0.05932
+[2025-01-17 15:57:39,289] INFO - Current spot price: 43.10
+[2025-01-17 15:57:39,289] INFO - Running Monte Carlo (with bubble pop shock). This may take a while...
+[2025-01-17 15:57:39,796] INFO - Simulation done. Shape: (5000, 365)
+[2025-01-17 15:57:41,835] INFO - Live Price from IBKR: 38.81
+[2025-01-17 15:57:41,887] WARNING - Expiry 2025-01-24 not in chain expirations. Skipping.
+[2025-01-17 15:57:41,925] WARNING - Expiry 2025-01-31 not in chain expirations. Skipping.
+[2025-01-17 15:57:41,961] WARNING - Expiry 2025-02-07 not in chain expirations. Skipping.
+[2025-01-17 15:57:41,997] WARNING - Expiry 2025-02-21 not in chain expirations. Skipping.
+[2025-01-17 15:57:42,038] WARNING - Expiry 2025-03-21 not in chain expirations. Skipping.
+[2025-01-17 15:57:42,076] WARNING - Expiry 2025-04-17 not in chain expirations. Skipping.
+[2025-01-17 15:57:42,079] INFO - No results to display.
+[2025-01-17 15:57:42,079] INFO - Running toy backtest with rolling 30-day puts...
+[2025-01-17 15:57:42,087] INFO - Backtest results:
+    buy_date expiry_date  S_buy   strike  premium_paid  S_expiry  payoff       PnL
+0 2023-03-31  2023-05-15   6.15   5.8425      0.628887      7.34  0.0000 -0.628887
+1 2023-05-15  2023-06-28   7.34   6.9730      0.750574     13.35  0.0000 -0.750574
+2 2023-06-28  2023-08-10  13.35  12.6825      1.365145     14.19  0.0000 -1.365145
+3 2023-08-10  2023-09-22  14.19  13.4805      1.451042     13.28  0.2005 -1.250542
+4 2023-09-22  2023-11-03  13.28  12.6160      1.357987     11.58  1.0360 -0.321987
+[2025-01-17 16:08:00,286] INFO - ==== Starting IonQ Options Model ====
+[2025-01-17 16:08:00,287] INFO - Connecting to IBKR at 127.0.0.1:7496, clientId=202
+[2025-01-17 16:08:00,770] INFO - Historical data loaded. Rows=502 from 2023-01-19 00:00:00 to 2025-01-17 00:00:00
+[2025-01-17 16:08:00,772] INFO - Fundamentals data loaded with columns: ['NPRICE', 'NHIG', 'NLOW', 'PDATE', 'VOL10DAVG', 'EV', 'MKTCAP', 'TTMREV', 'TTMEBITD', 'TTMNIAC', 'TTMEPSXCLX', 'TTMREVPS', 'QBVPS', 'QCSHPS', 'TTMCFSHR', 'TTMDIVSHR', 'TTMGROSMGN', 'TTMROEPCT', 'TTMPR2REV', 'PRICE2BK', 'Employees', 'FORECAST_ConsRecom', 'FORECAST_TargetPrice', 'FORECAST_ProjPE', 'FORECAST_ProjSales', 'FORECAST_ProjSalesQ', 'FORECAST_ProjEPS', 'FORECAST_ProjEPSQ', 'FORECAST_ProjProfit', 'FORECAST_ProjDPS', 'CompanyName', 'SharesOutstanding', 'FloatShares']
+[2025-01-17 16:08:00,783] INFO - Macro data loaded. Rows=25767
+[2025-01-17 16:08:00,790] INFO - Merged & featured shape: (443, 44)
+[2025-01-17 16:08:00,790] INFO - Derived shock params from fundamentals: daily_shock_prob=0.0500, shock_mag_mean=0.441, shock_mag_std=0.100
+[2025-01-17 16:08:00,790] INFO - Using risk-free rate ~ 4.33% from macro data
+[2025-01-17 16:08:00,790] INFO - Fitting GARCH(1,1)...
+[2025-01-17 16:08:00,803] DEBUG - GARCH fit summary:
+                     Constant Mean - GARCH Model Results                      
+==============================================================================
+Dep. Variable:                  close   R-squared:                       0.000
+Mean Model:             Constant Mean   Adj. R-squared:                  0.000
+Vol Model:                      GARCH   Log-Likelihood:               -1401.25
+Distribution:                  Normal   AIC:                           2810.51
+Method:            Maximum Likelihood   BIC:                           2826.87
+                                        No. Observations:                  442
+Date:                Fri, Jan 17 2025   Df Residuals:                      441
+Time:                        16:08:00   Df Model:                            1
+                               Mean Model                               
+========================================================================
+                 coef    std err          t      P>|t|  95.0% Conf. Int.
+------------------------------------------------------------------------
+mu             0.2206      0.248      0.890      0.374 [ -0.265,  0.706]
+                              Volatility Model                              
+============================================================================
+                 coef    std err          t      P>|t|      95.0% Conf. Int.
+----------------------------------------------------------------------------
+omega          0.2261      0.266      0.850      0.395     [ -0.295,  0.747]
+alpha[1]       0.0485  1.792e-02      2.708  6.776e-03 [1.340e-02,8.365e-02]
+beta[1]        0.9480  1.499e-02     63.246      0.000     [  0.919,  0.977]
+============================================================================
+
+Covariance estimator: robust
+[2025-01-17 16:08:00,806] INFO - GARCH vol path length: 365 days of forecasted daily vol
+[2025-01-17 16:08:00,806] INFO - Drift (mu) from hist log-return: 0.00484
+[2025-01-17 16:08:00,806] INFO - Spot price (last hist): 43.10
+[2025-01-17 16:08:00,806] INFO - Running Monte Carlo sim with bubble pop + GARCH vol path...
+[2025-01-17 16:08:01,357] INFO - Sim done. shape=(5000, 365)
+[2025-01-17 16:08:01,457] INFO - Found 15 expiries from IBKR. e.g.: ['20250117', '20250124', '20250131', '20250207', '20250214']...
+[2025-01-17 16:08:53,571] INFO - ==== Starting IonQ Options Model ====
+[2025-01-17 16:08:53,572] INFO - Connecting to IBKR at 127.0.0.1:7496, clientId=202
+[2025-01-17 16:08:54,030] INFO - Historical data loaded. Rows=502 from 2023-01-19 00:00:00 to 2025-01-17 00:00:00
+[2025-01-17 16:08:54,032] INFO - Fundamentals data loaded with columns: ['NPRICE', 'NHIG', 'NLOW', 'PDATE', 'VOL10DAVG', 'EV', 'MKTCAP', 'TTMREV', 'TTMEBITD', 'TTMNIAC', 'TTMEPSXCLX', 'TTMREVPS', 'QBVPS', 'QCSHPS', 'TTMCFSHR', 'TTMDIVSHR', 'TTMGROSMGN', 'TTMROEPCT', 'TTMPR2REV', 'PRICE2BK', 'Employees', 'FORECAST_ConsRecom', 'FORECAST_TargetPrice', 'FORECAST_ProjPE', 'FORECAST_ProjSales', 'FORECAST_ProjSalesQ', 'FORECAST_ProjEPS', 'FORECAST_ProjEPSQ', 'FORECAST_ProjProfit', 'FORECAST_ProjDPS', 'CompanyName', 'SharesOutstanding', 'FloatShares']
+[2025-01-17 16:08:54,042] INFO - Macro data loaded. Rows=25767
+[2025-01-17 16:08:54,049] INFO - Merged & featured shape: (443, 44)
+[2025-01-17 16:08:54,049] INFO - Derived shock params from fundamentals: daily_shock_prob=0.0500, shock_mag_mean=0.441, shock_mag_std=0.100
+[2025-01-17 16:08:54,049] INFO - Using risk-free rate ~ 4.33% from macro data
+[2025-01-17 16:08:54,049] INFO - Fitting GARCH(1,1)...
+[2025-01-17 16:08:54,062] DEBUG - GARCH fit summary:
+                     Constant Mean - GARCH Model Results                      
+==============================================================================
+Dep. Variable:                  close   R-squared:                       0.000
+Mean Model:             Constant Mean   Adj. R-squared:                  0.000
+Vol Model:                      GARCH   Log-Likelihood:               -1401.25
+Distribution:                  Normal   AIC:                           2810.51
+Method:            Maximum Likelihood   BIC:                           2826.87
+                                        No. Observations:                  442
+Date:                Fri, Jan 17 2025   Df Residuals:                      441
+Time:                        16:08:54   Df Model:                            1
+                               Mean Model                               
+========================================================================
+                 coef    std err          t      P>|t|  95.0% Conf. Int.
+------------------------------------------------------------------------
+mu             0.2206      0.248      0.890      0.374 [ -0.265,  0.706]
+                              Volatility Model                              
+============================================================================
+                 coef    std err          t      P>|t|      95.0% Conf. Int.
+----------------------------------------------------------------------------
+omega          0.2261      0.266      0.850      0.395     [ -0.295,  0.747]
+alpha[1]       0.0485  1.792e-02      2.708  6.776e-03 [1.340e-02,8.365e-02]
+beta[1]        0.9480  1.499e-02     63.246      0.000     [  0.919,  0.977]
+============================================================================
+
+Covariance estimator: robust
+[2025-01-17 16:08:54,064] INFO - GARCH vol path length: 365 days of forecasted daily vol
+[2025-01-17 16:08:54,064] INFO - Drift (mu) from hist log-return: 0.00484
+[2025-01-17 16:08:54,065] INFO - Spot price (last hist): 43.10
+[2025-01-17 16:08:54,065] INFO - Running Monte Carlo sim with bubble pop + GARCH vol path...
+[2025-01-17 16:08:54,624] INFO - Sim done. shape=(5000, 365)
+[2025-01-17 16:08:54,714] INFO - Found 15 expiries from IBKR. e.g.: ['20250117', '20250124', '20250131', '20250207', '20250214']...
+[2025-01-17 16:08:54,714] INFO - Chosen next 6 expiries: ['20250117', '20250124', '20250131', '20250207', '20250214', '20250221']
+[2025-01-17 16:09:15,406] INFO - ==== Starting IonQ Options Model ====
+[2025-01-17 16:09:15,407] INFO - Connecting to IBKR at 127.0.0.1:7496, clientId=202
+[2025-01-17 16:09:15,861] INFO - Historical data loaded. Rows=502 from 2023-01-19 00:00:00 to 2025-01-17 00:00:00
+[2025-01-17 16:09:15,862] INFO - Fundamentals data loaded with columns: ['NPRICE', 'NHIG', 'NLOW', 'PDATE', 'VOL10DAVG', 'EV', 'MKTCAP', 'TTMREV', 'TTMEBITD', 'TTMNIAC', 'TTMEPSXCLX', 'TTMREVPS', 'QBVPS', 'QCSHPS', 'TTMCFSHR', 'TTMDIVSHR', 'TTMGROSMGN', 'TTMROEPCT', 'TTMPR2REV', 'PRICE2BK', 'Employees', 'FORECAST_ConsRecom', 'FORECAST_TargetPrice', 'FORECAST_ProjPE', 'FORECAST_ProjSales', 'FORECAST_ProjSalesQ', 'FORECAST_ProjEPS', 'FORECAST_ProjEPSQ', 'FORECAST_ProjProfit', 'FORECAST_ProjDPS', 'CompanyName', 'SharesOutstanding', 'FloatShares']
+[2025-01-17 16:09:15,870] INFO - Macro data loaded. Rows=25767
+[2025-01-17 16:09:15,874] INFO - Merged & featured shape: (443, 44)
+[2025-01-17 16:09:15,874] INFO - Derived shock params from fundamentals: daily_shock_prob=0.0500, shock_mag_mean=0.441, shock_mag_std=0.100
+[2025-01-17 16:09:15,874] INFO - Using risk-free rate ~ 4.33% from macro data
+[2025-01-17 16:09:15,874] INFO - Fitting GARCH(1,1)...
+[2025-01-17 16:09:15,884] DEBUG - GARCH fit summary:
+                     Constant Mean - GARCH Model Results                      
+==============================================================================
+Dep. Variable:                  close   R-squared:                       0.000
+Mean Model:             Constant Mean   Adj. R-squared:                  0.000
+Vol Model:                      GARCH   Log-Likelihood:               -1401.25
+Distribution:                  Normal   AIC:                           2810.51
+Method:            Maximum Likelihood   BIC:                           2826.87
+                                        No. Observations:                  442
+Date:                Fri, Jan 17 2025   Df Residuals:                      441
+Time:                        16:09:15   Df Model:                            1
+                               Mean Model                               
+========================================================================
+                 coef    std err          t      P>|t|  95.0% Conf. Int.
+------------------------------------------------------------------------
+mu             0.2206      0.248      0.890      0.374 [ -0.265,  0.706]
+                              Volatility Model                              
+============================================================================
+                 coef    std err          t      P>|t|      95.0% Conf. Int.
+----------------------------------------------------------------------------
+omega          0.2261      0.266      0.850      0.395     [ -0.295,  0.747]
+alpha[1]       0.0485  1.792e-02      2.708  6.776e-03 [1.340e-02,8.365e-02]
+beta[1]        0.9480  1.499e-02     63.246      0.000     [  0.919,  0.977]
+============================================================================
+
+Covariance estimator: robust
+[2025-01-17 16:09:15,886] INFO - GARCH vol path length: 365 days of forecasted daily vol
+[2025-01-17 16:09:15,886] INFO - Drift (mu) from hist log-return: 0.00484
+[2025-01-17 16:09:15,886] INFO - Spot price (last hist): 43.10
+[2025-01-17 16:09:15,886] INFO - Running Monte Carlo sim with bubble pop + GARCH vol path...
+[2025-01-17 16:09:16,429] INFO - Sim done. shape=(5000, 365)
+[2025-01-17 16:09:16,523] INFO - Found 15 expiries from IBKR. e.g.: ['20250117', '20250124', '20250131', '20250207', '20250214']...
+[2025-01-17 16:09:16,524] INFO - Chosen next 6 expiries: ['20250117', '20250124', '20250131', '20250207', '20250214', '20250221']
+[2025-01-17 16:09:16,524] INFO - Expiry=20250117, #valid_strikes=71
+[2025-01-17 16:10:06,525] INFO - ==== Starting IonQ Options Model ====
+[2025-01-17 16:10:06,526] INFO - Connecting to IBKR at 127.0.0.1:7496, clientId=202
+[2025-01-17 16:10:06,986] INFO - Historical data loaded. Rows=502 from 2023-01-19 00:00:00 to 2025-01-17 00:00:00
+[2025-01-17 16:10:06,988] INFO - Fundamentals data loaded with columns: ['NPRICE', 'NHIG', 'NLOW', 'PDATE', 'VOL10DAVG', 'EV', 'MKTCAP', 'TTMREV', 'TTMEBITD', 'TTMNIAC', 'TTMEPSXCLX', 'TTMREVPS', 'QBVPS', 'QCSHPS', 'TTMCFSHR', 'TTMDIVSHR', 'TTMGROSMGN', 'TTMROEPCT', 'TTMPR2REV', 'PRICE2BK', 'Employees', 'FORECAST_ConsRecom', 'FORECAST_TargetPrice', 'FORECAST_ProjPE', 'FORECAST_ProjSales', 'FORECAST_ProjSalesQ', 'FORECAST_ProjEPS', 'FORECAST_ProjEPSQ', 'FORECAST_ProjProfit', 'FORECAST_ProjDPS', 'CompanyName', 'SharesOutstanding', 'FloatShares']
+[2025-01-17 16:10:06,997] INFO - Macro data loaded. Rows=25767
+[2025-01-17 16:10:07,004] INFO - Merged & featured shape: (443, 44)
+[2025-01-17 16:10:07,004] INFO - Derived shock params from fundamentals: daily_shock_prob=0.0500, shock_mag_mean=0.441, shock_mag_std=0.100
+[2025-01-17 16:10:07,004] INFO - Using risk-free rate ~ 4.33% from macro data
+[2025-01-17 16:10:07,004] INFO - Fitting GARCH(1,1)...
+[2025-01-17 16:10:07,016] DEBUG - GARCH fit summary:
+                     Constant Mean - GARCH Model Results                      
+==============================================================================
+Dep. Variable:                  close   R-squared:                       0.000
+Mean Model:             Constant Mean   Adj. R-squared:                  0.000
+Vol Model:                      GARCH   Log-Likelihood:               -1401.25
+Distribution:                  Normal   AIC:                           2810.51
+Method:            Maximum Likelihood   BIC:                           2826.87
+                                        No. Observations:                  442
+Date:                Fri, Jan 17 2025   Df Residuals:                      441
+Time:                        16:10:07   Df Model:                            1
+                               Mean Model                               
+========================================================================
+                 coef    std err          t      P>|t|  95.0% Conf. Int.
+------------------------------------------------------------------------
+mu             0.2206      0.248      0.890      0.374 [ -0.265,  0.706]
+                              Volatility Model                              
+============================================================================
+                 coef    std err          t      P>|t|      95.0% Conf. Int.
+----------------------------------------------------------------------------
+omega          0.2261      0.266      0.850      0.395     [ -0.295,  0.747]
+alpha[1]       0.0485  1.792e-02      2.708  6.776e-03 [1.340e-02,8.365e-02]
+beta[1]        0.9480  1.499e-02     63.246      0.000     [  0.919,  0.977]
+============================================================================
+
+Covariance estimator: robust
+[2025-01-17 16:10:07,018] INFO - GARCH vol path length: 365 days of forecasted daily vol
+[2025-01-17 16:10:07,019] INFO - Drift (mu) from hist log-return: 0.00484
+[2025-01-17 16:10:07,019] INFO - Spot price (last hist): 43.10
+[2025-01-17 16:10:07,019] INFO - Running Monte Carlo sim with bubble pop + GARCH vol path...
+[2025-01-17 16:10:07,567] INFO - Sim done. shape=(5000, 365)
+[2025-01-17 16:10:07,662] INFO - Found 15 expiries from IBKR. e.g.: ['20250117', '20250124', '20250131', '20250207', '20250214']...
+[2025-01-17 16:10:07,662] INFO - Chosen next 6 expiries: ['20250117', '20250124', '20250131', '20250207', '20250214', '20250221']
+[2025-01-17 16:10:07,662] INFO - Expiry=20250117, #valid_strikes=71
+[2025-01-17 16:14:06,082] INFO - ==== Starting IonQ Options Model ====
+[2025-01-17 16:14:06,082] INFO - Connecting to IBKR at 127.0.0.1:7496, clientId=202 ...
+[2025-01-17 16:14:06,569] INFO - Historical data loaded. Rows=502 from 2023-01-19 00:00:00 to 2025-01-17 00:00:00
+[2025-01-17 16:14:06,571] INFO - Fundamentals data loaded with columns: ['NPRICE', 'NHIG', 'NLOW', 'PDATE', 'VOL10DAVG', 'EV', 'MKTCAP', 'TTMREV', 'TTMEBITD', 'TTMNIAC', 'TTMEPSXCLX', 'TTMREVPS', 'QBVPS', 'QCSHPS', 'TTMCFSHR', 'TTMDIVSHR', 'TTMGROSMGN', 'TTMROEPCT', 'TTMPR2REV', 'PRICE2BK', 'Employees', 'FORECAST_ConsRecom', 'FORECAST_TargetPrice', 'FORECAST_ProjPE', 'FORECAST_ProjSales', 'FORECAST_ProjSalesQ', 'FORECAST_ProjEPS', 'FORECAST_ProjEPSQ', 'FORECAST_ProjProfit', 'FORECAST_ProjDPS', 'CompanyName', 'SharesOutstanding', 'FloatShares']
+[2025-01-17 16:14:06,580] INFO - Macro data loaded. Rows=25767
+[2025-01-17 16:14:06,586] INFO - Merged & featured shape: (443, 44)
+[2025-01-17 16:14:06,587] INFO - Derived shock params from fundamentals: daily_shock_prob=0.0500, shock_mag_mean=0.441, shock_mag_std=0.100
+[2025-01-17 16:14:06,587] INFO - Using risk-free rate ~ 4.33% from macro data
+[2025-01-17 16:14:06,587] INFO - Fitting GARCH(1,1)...
+[2025-01-17 16:14:06,597] INFO - GARCH vol path length: 365
+[2025-01-17 16:14:06,597] INFO - Drift (mu): 0.00484
+[2025-01-17 16:14:06,597] INFO - Spot price: 43.10
+[2025-01-17 16:14:06,597] INFO - Running MC w/ GARCH + bubble pop ...
+[2025-01-17 16:14:07,158] INFO - Sim done. shape=(5000, 365)
+[2025-01-17 16:18:44,657] INFO - ==== Starting IonQ Options Model ====
+[2025-01-17 16:18:44,658] INFO - Connecting to IBKR at 127.0.0.1:7496, clientId=202 ...
+[2025-01-17 16:18:45,138] INFO - Historical data loaded. Rows=502 from 2023-01-19 00:00:00 to 2025-01-17 00:00:00
+[2025-01-17 16:18:45,140] INFO - Fundamentals data loaded with columns: ['NPRICE', 'NHIG', 'NLOW', 'PDATE', 'VOL10DAVG', 'EV', 'MKTCAP', 'TTMREV', 'TTMEBITD', 'TTMNIAC', 'TTMEPSXCLX', 'TTMREVPS', 'QBVPS', 'QCSHPS', 'TTMCFSHR', 'TTMDIVSHR', 'TTMGROSMGN', 'TTMROEPCT', 'TTMPR2REV', 'PRICE2BK', 'Employees', 'FORECAST_ConsRecom', 'FORECAST_TargetPrice', 'FORECAST_ProjPE', 'FORECAST_ProjSales', 'FORECAST_ProjSalesQ', 'FORECAST_ProjEPS', 'FORECAST_ProjEPSQ', 'FORECAST_ProjProfit', 'FORECAST_ProjDPS', 'CompanyName', 'SharesOutstanding', 'FloatShares']
+[2025-01-17 16:18:45,152] INFO - Macro data loaded. Rows=25767
+[2025-01-17 16:18:45,159] INFO - Merged & featured shape: (443, 44)
+[2025-01-17 16:18:45,159] INFO - Derived shock params from fundamentals: daily_shock_prob=0.0500, shock_mag_mean=0.441, shock_mag_std=0.100
+[2025-01-17 16:18:45,159] INFO - Using risk-free rate ~ 4.33% from macro data
+[2025-01-17 16:18:45,159] INFO - Fitting GARCH(1,1)...
+[2025-01-17 16:18:45,170] INFO - GARCH vol path length: 365
+[2025-01-17 16:18:45,170] INFO - Drift (mu): 0.00484
+[2025-01-17 16:18:45,170] INFO - Spot price: 43.10
+[2025-01-17 16:18:45,170] INFO - Running MC w/ GARCH + bubble pop ...
+[2025-01-17 16:18:45,727] INFO - Sim done. shape=(5000, 365)
+[2025-01-17 16:39:35,805] INFO - ==== Starting IonQ Options Model ====
+[2025-01-17 16:39:35,805] INFO - Connecting to IBKR at 127.0.0.1:7496, clientId=202 ...
+[2025-01-17 16:39:36,283] INFO - Historical data loaded. Rows=502 from 2023-01-19 00:00:00 to 2025-01-17 00:00:00
+[2025-01-17 16:39:36,285] INFO - Fundamentals data loaded with columns: ['NPRICE', 'NHIG', 'NLOW', 'PDATE', 'VOL10DAVG', 'EV', 'MKTCAP', 'TTMREV', 'TTMEBITD', 'TTMNIAC', 'TTMEPSXCLX', 'TTMREVPS', 'QBVPS', 'QCSHPS', 'TTMCFSHR', 'TTMDIVSHR', 'TTMGROSMGN', 'TTMROEPCT', 'TTMPR2REV', 'PRICE2BK', 'Employees', 'FORECAST_ConsRecom', 'FORECAST_TargetPrice', 'FORECAST_ProjPE', 'FORECAST_ProjSales', 'FORECAST_ProjSalesQ', 'FORECAST_ProjEPS', 'FORECAST_ProjEPSQ', 'FORECAST_ProjProfit', 'FORECAST_ProjDPS', 'CompanyName', 'SharesOutstanding', 'FloatShares']
+[2025-01-17 16:39:36,294] INFO - Macro data loaded. Rows=25767
+[2025-01-17 16:39:36,301] INFO - Merged & featured shape: (443, 44)
+[2025-01-17 16:39:36,301] INFO - Derived shock params from fundamentals: daily_shock_prob=0.0500, shock_mag_mean=0.441, shock_mag_std=0.100
+[2025-01-17 16:39:36,301] INFO - Using risk-free rate ~ 4.33% from macro data
+[2025-01-17 16:39:36,301] INFO - Fitting GARCH(1,1)...
+[2025-01-17 16:39:36,311] INFO - GARCH vol path length: 365
+[2025-01-17 16:39:36,312] INFO - Drift (mu): 0.00484
+[2025-01-17 16:39:36,312] INFO - Spot price: 43.10
+[2025-01-17 16:39:36,312] INFO - Running MC w/ GARCH + bubble pop ...
+[2025-01-17 16:39:36,880] INFO - Sim done. shape=(5000, 365)
+[2025-01-17 16:43:56,038] INFO - ==== Starting IonQ Options Model ====
+[2025-01-17 16:43:56,038] INFO - Connecting to IBKR at 127.0.0.1:7496, clientId=202 ...
+[2025-01-17 16:43:56,508] INFO - Historical data loaded. Rows=502 from 2023-01-19 00:00:00 to 2025-01-17 00:00:00
+[2025-01-17 16:43:56,510] INFO - Fundamentals data loaded with columns: ['NPRICE', 'NHIG', 'NLOW', 'PDATE', 'VOL10DAVG', 'EV', 'MKTCAP', 'TTMREV', 'TTMEBITD', 'TTMNIAC', 'TTMEPSXCLX', 'TTMREVPS', 'QBVPS', 'QCSHPS', 'TTMCFSHR', 'TTMDIVSHR', 'TTMGROSMGN', 'TTMROEPCT', 'TTMPR2REV', 'PRICE2BK', 'Employees', 'FORECAST_ConsRecom', 'FORECAST_TargetPrice', 'FORECAST_ProjPE', 'FORECAST_ProjSales', 'FORECAST_ProjSalesQ', 'FORECAST_ProjEPS', 'FORECAST_ProjEPSQ', 'FORECAST_ProjProfit', 'FORECAST_ProjDPS', 'CompanyName', 'SharesOutstanding', 'FloatShares']
+[2025-01-17 16:43:56,518] INFO - Macro data loaded. Rows=25767
+[2025-01-17 16:43:56,524] INFO - Merged & featured shape: (443, 44)
+[2025-01-17 16:43:56,525] INFO - Derived shock params from fundamentals: daily_shock_prob=0.0500, shock_mag_mean=0.441, shock_mag_std=0.100
+[2025-01-17 16:43:56,525] INFO - Using risk-free rate ~ 4.33% from macro data
+[2025-01-17 16:43:56,525] INFO - Fitting GARCH(1,1)...
+[2025-01-17 16:43:56,534] INFO - GARCH vol path length: 365
+[2025-01-17 16:43:56,534] INFO - Drift (mu): 0.00484
+[2025-01-17 16:43:56,534] INFO - Spot price: 43.10
+[2025-01-17 16:43:56,534] INFO - Running MC w/ GARCH + bubble pop ...
+[2025-01-17 16:43:57,064] INFO - Sim done. shape=(5000, 365)
+[2025-01-17 16:44:32,819] INFO - ==== Starting IonQ Options Model ====
+[2025-01-17 16:44:32,819] INFO - Connecting to IBKR at 127.0.0.1:7496, clientId=202 ...
+[2025-01-17 16:44:33,276] INFO - Historical data loaded. Rows=502 from 2023-01-19 00:00:00 to 2025-01-17 00:00:00
+[2025-01-17 16:44:33,277] INFO - Fundamentals data loaded with columns: ['NPRICE', 'NHIG', 'NLOW', 'PDATE', 'VOL10DAVG', 'EV', 'MKTCAP', 'TTMREV', 'TTMEBITD', 'TTMNIAC', 'TTMEPSXCLX', 'TTMREVPS', 'QBVPS', 'QCSHPS', 'TTMCFSHR', 'TTMDIVSHR', 'TTMGROSMGN', 'TTMROEPCT', 'TTMPR2REV', 'PRICE2BK', 'Employees', 'FORECAST_ConsRecom', 'FORECAST_TargetPrice', 'FORECAST_ProjPE', 'FORECAST_ProjSales', 'FORECAST_ProjSalesQ', 'FORECAST_ProjEPS', 'FORECAST_ProjEPSQ', 'FORECAST_ProjProfit', 'FORECAST_ProjDPS', 'CompanyName', 'SharesOutstanding', 'FloatShares']
+[2025-01-17 16:44:33,284] INFO - Macro data loaded. Rows=25767
+[2025-01-17 16:44:33,290] INFO - Merged & featured shape: (443, 44)
+[2025-01-17 16:44:33,290] INFO - Derived shock params from fundamentals: daily_shock_prob=0.0500, shock_mag_mean=0.441, shock_mag_std=0.100
+[2025-01-17 16:44:33,290] INFO - Using risk-free rate ~ 4.33% from macro data
+[2025-01-17 16:44:33,291] INFO - Fitting GARCH(1,1)...
+[2025-01-17 16:44:33,305] INFO - GARCH vol path length: 365
+[2025-01-17 16:44:33,306] INFO - Drift (mu): 0.00484
+[2025-01-17 16:44:33,306] INFO - Spot price: 43.10
+[2025-01-17 16:44:33,306] INFO - Running MC w/ GARCH + bubble pop ...
+[2025-01-17 16:44:33,841] INFO - Sim done. shape=(5000, 365)
+[2025-01-17 16:44:33,841] INFO - Qualifying IONQ ...
+[2025-01-17 16:44:33,878] INFO - Fetching chain info for IONQ ...
+[2025-01-17 16:51:06,581] INFO - ==== Starting IonQ Options Model (with timeouts) ====
+[2025-01-17 16:51:06,581] INFO - Connecting to IBKR at 127.0.0.1:7496, clientId=202 ...
+[2025-01-17 16:51:07,049] INFO - Historical data loaded. Rows=502 from 2023-01-19 00:00:00 to 2025-01-17 00:00:00
+[2025-01-17 16:51:07,050] INFO - Fundamentals data loaded with columns: ['NPRICE', 'NHIG', 'NLOW', 'PDATE', 'VOL10DAVG', 'EV', 'MKTCAP', 'TTMREV', 'TTMEBITD', 'TTMNIAC', 'TTMEPSXCLX', 'TTMREVPS', 'QBVPS', 'QCSHPS', 'TTMCFSHR', 'TTMDIVSHR', 'TTMGROSMGN', 'TTMROEPCT', 'TTMPR2REV', 'PRICE2BK', 'Employees', 'FORECAST_ConsRecom', 'FORECAST_TargetPrice', 'FORECAST_ProjPE', 'FORECAST_ProjSales', 'FORECAST_ProjSalesQ', 'FORECAST_ProjEPS', 'FORECAST_ProjEPSQ', 'FORECAST_ProjProfit', 'FORECAST_ProjDPS', 'CompanyName', 'SharesOutstanding', 'FloatShares']
+[2025-01-17 16:51:07,062] INFO - Macro data loaded. Rows=25767
+[2025-01-17 16:51:07,066] INFO - Merged & featured shape: (443, 44)
+[2025-01-17 16:51:07,067] INFO - Derived shock params from fundamentals: daily_shock_prob=0.0500, shock_mag_mean=0.441, shock_mag_std=0.100
+[2025-01-17 16:51:07,067] INFO - Using risk-free rate ~ 4.33% from macro data
+[2025-01-17 16:51:07,067] INFO - Fitting GARCH(1,1)...
+[2025-01-17 16:51:07,075] INFO - GARCH vol path length: 365
+[2025-01-17 16:51:07,075] INFO - Drift (mu): 0.00484
+[2025-01-17 16:51:07,076] INFO - Spot price: 43.10
+[2025-01-17 16:51:07,076] INFO - Running MC w/ GARCH + bubble pop ...
+[2025-01-17 16:51:07,601] INFO - Sim done. shape=(5000, 365)
+[2025-01-17 16:51:07,601] INFO - Qualifying IONQ ...
+[2025-01-17 16:51:27,604] WARNING - qualifyContracts timed out after 20.0 sec for Stock(symbol='IONQ', exchange='SMART', currency='USD').
+[2025-01-17 16:51:27,606] INFO - Fetching chain info for IONQ ...
+[2025-01-17 17:40:30,743] INFO - ==== Starting IonQ Options Model (with timeouts) ====
+[2025-01-17 17:40:30,743] INFO - Connecting to IBKR at 127.0.0.1:7496, clientId=202 ...
+[2025-01-17 17:40:31,208] INFO - Historical data loaded. Rows=502 from 2023-01-19 00:00:00 to 2025-01-17 00:00:00
+[2025-01-17 17:40:31,209] INFO - Fundamentals data loaded with columns: ['NPRICE', 'NHIG', 'NLOW', 'PDATE', 'VOL10DAVG', 'EV', 'MKTCAP', 'TTMREV', 'TTMEBITD', 'TTMNIAC', 'TTMEPSXCLX', 'TTMREVPS', 'QBVPS', 'QCSHPS', 'TTMCFSHR', 'TTMDIVSHR', 'TTMGROSMGN', 'TTMROEPCT', 'TTMPR2REV', 'PRICE2BK', 'Employees', 'FORECAST_ConsRecom', 'FORECAST_TargetPrice', 'FORECAST_ProjPE', 'FORECAST_ProjSales', 'FORECAST_ProjSalesQ', 'FORECAST_ProjEPS', 'FORECAST_ProjEPSQ', 'FORECAST_ProjProfit', 'FORECAST_ProjDPS', 'CompanyName', 'SharesOutstanding', 'FloatShares']
+[2025-01-17 17:40:31,220] INFO - Macro data loaded. Rows=25767
+[2025-01-17 17:40:31,226] INFO - Merged & featured shape: (443, 44)
+[2025-01-17 17:40:31,226] INFO - Derived shock params from fundamentals: daily_shock_prob=0.0500, shock_mag_mean=0.441, shock_mag_std=0.100
+[2025-01-17 17:40:31,226] INFO - Using risk-free rate ~ 4.33% from macro data
+[2025-01-17 17:40:31,226] INFO - Fitting GARCH(1,1)...
+[2025-01-17 17:40:31,236] INFO - GARCH vol path length: 365
+[2025-01-17 17:40:31,237] INFO - Drift (mu): 0.00484
+[2025-01-17 17:40:31,237] INFO - Spot price: 43.10
+[2025-01-17 17:40:31,237] INFO - Running MC w/ GARCH + bubble pop ...
+[2025-01-17 17:40:31,769] INFO - Sim done. shape=(5000, 365)
+[2025-01-17 17:40:31,769] INFO - Qualifying IONQ ...
+[2025-01-17 17:40:51,771] WARNING - qualifyContracts timed out after 20.0 sec for Stock(symbol='IONQ', exchange='SMART', currency='USD').
+[2025-01-17 17:40:51,772] INFO - Fetching chain info for IONQ ...
+[2025-01-17 17:41:21,773] WARNING - reqSecDefOptParams timed out after 30.0 sec. Returning empty.
+[2025-01-17 17:41:21,773] WARNING - No chain info returned (timed out or empty). Exiting.
+[2025-01-17 17:50:28,179] INFO - ==== Starting IonQ Options Model (with timeouts) ====
+[2025-01-17 17:50:28,179] INFO - Connecting to IBKR at 127.0.0.1:7496, clientId=202 ...
+[2025-01-17 17:50:28,779] INFO - Historical data loaded. Rows=502 from 2023-01-19 00:00:00 to 2025-01-17 00:00:00
+[2025-01-17 17:50:28,782] INFO - Fundamentals data loaded with columns: ['NPRICE', 'NHIG', 'NLOW', 'PDATE', 'VOL10DAVG', 'EV', 'MKTCAP', 'TTMREV', 'TTMEBITD', 'TTMNIAC', 'TTMEPSXCLX', 'TTMREVPS', 'QBVPS', 'QCSHPS', 'TTMCFSHR', 'TTMDIVSHR', 'TTMGROSMGN', 'TTMROEPCT', 'TTMPR2REV', 'PRICE2BK', 'Employees', 'FORECAST_ConsRecom', 'FORECAST_TargetPrice', 'FORECAST_ProjPE', 'FORECAST_ProjSales', 'FORECAST_ProjSalesQ', 'FORECAST_ProjEPS', 'FORECAST_ProjEPSQ', 'FORECAST_ProjProfit', 'FORECAST_ProjDPS', 'CompanyName', 'SharesOutstanding', 'FloatShares']
+[2025-01-17 17:50:28,792] INFO - Macro data loaded. Rows=25767
+[2025-01-17 17:50:28,798] INFO - Merged & featured shape: (443, 44)
+[2025-01-17 17:50:28,799] INFO - Derived shock params from fundamentals: daily_shock_prob=0.0500, shock_mag_mean=0.441, shock_mag_std=0.100
+[2025-01-17 17:50:28,799] INFO - Using risk-free rate ~ 4.33% from macro data
+[2025-01-17 17:50:28,799] INFO - Fitting GARCH(1,1)...
+[2025-01-17 17:50:28,809] INFO - GARCH vol path length: 365
+[2025-01-17 17:50:28,810] INFO - Drift (mu): 0.00484
+[2025-01-17 17:50:28,810] INFO - Spot price: 43.10
+[2025-01-17 17:50:28,810] INFO - Running MC w/ GARCH + bubble pop ...
+[2025-01-17 17:50:29,368] INFO - Sim done. shape=(5000, 365)
+[2025-01-17 17:50:29,368] INFO - Qualifying Stock(symbol='IONQ', exchange='SMART', currency='USD') ...
+[2025-01-17 17:50:49,370] WARNING - qualifyContracts timed out after 20.0s for Stock(symbol='IONQ', exchange='SMART', currency='USD').
+[2025-01-17 17:50:49,371] WARNING - Qualification or conId=0 => fallback
+[2025-01-17 17:50:49,371] WARNING - QualifyContracts failed. Trying fallback with reqMatchingSymbols: IONQ
+[2025-01-17 17:50:53,375] INFO - Found fallback match: conId=517593749, exchange=, symbol=IONQ
+[2025-01-17 17:50:53,375] INFO - Using fallback contract: Stock(conId=517593749, symbol='IONQ', exchange='SMART', primaryExchange='NYSE', currency='USD') (conId=517593749)
+[2025-01-17 17:50:53,376] INFO - Fetching chain info for Stock(conId=517593749, symbol='IONQ', exchange='SMART', primaryExchange='NYSE', currency='USD') ...
+[2025-01-17 17:51:23,377] WARNING - reqSecDefOptParams timed out after 30.0s. Returning empty.
+[2025-01-17 17:51:23,377] WARNING - No chain info returned (timeout or invalid). Exiting.
+[2025-01-17 18:13:28,266] INFO - ==== Starting IonQ Options Model (with timeouts) ====
+[2025-01-17 18:13:28,266] INFO - Connecting to IBKR at 127.0.0.1:7496, clientId=202 ...
+[2025-01-17 18:13:28,751] INFO - Historical data loaded. Rows=502 from 2023-01-19 00:00:00 to 2025-01-17 00:00:00
+[2025-01-17 18:13:28,753] INFO - Fundamentals data loaded with columns: ['NPRICE', 'NHIG', 'NLOW', 'PDATE', 'VOL10DAVG', 'EV', 'MKTCAP', 'TTMREV', 'TTMEBITD', 'TTMNIAC', 'TTMEPSXCLX', 'TTMREVPS', 'QBVPS', 'QCSHPS', 'TTMCFSHR', 'TTMDIVSHR', 'TTMGROSMGN', 'TTMROEPCT', 'TTMPR2REV', 'PRICE2BK', 'Employees', 'FORECAST_ConsRecom', 'FORECAST_TargetPrice', 'FORECAST_ProjPE', 'FORECAST_ProjSales', 'FORECAST_ProjSalesQ', 'FORECAST_ProjEPS', 'FORECAST_ProjEPSQ', 'FORECAST_ProjProfit', 'FORECAST_ProjDPS', 'CompanyName', 'SharesOutstanding', 'FloatShares']
+[2025-01-17 18:13:28,764] INFO - Macro data loaded. Rows=25767
+[2025-01-17 18:13:28,770] INFO - Merged & featured shape: (443, 44)
+[2025-01-17 18:13:28,770] INFO - Derived shock params from fundamentals: daily_shock_prob=0.0500, shock_mag_mean=0.441, shock_mag_std=0.100
+[2025-01-17 18:13:28,770] INFO - Using risk-free rate ~ 4.33% from macro data
+[2025-01-17 18:13:28,770] INFO - Fitting GARCH(1,1)...
+[2025-01-17 18:13:28,781] INFO - GARCH vol path length: 365
+[2025-01-17 18:13:28,782] INFO - Drift (mu): 0.00484
+[2025-01-17 18:13:28,782] INFO - Spot price: 43.10
+[2025-01-17 18:13:28,782] INFO - Running MC w/ GARCH + bubble pop ...
+[2025-01-17 18:13:29,340] INFO - Sim done. shape=(5000, 365)
+[2025-01-17 18:13:29,340] INFO - Qualifying Stock(symbol='IONQ', exchange='SMART', currency='USD') ...
