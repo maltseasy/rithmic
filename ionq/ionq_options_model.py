@@ -1,21 +1,9 @@
 #!/usr/bin/env python3
 
 """
-ionq_options_model_strict.py
-
-Key Features:
-1) Uses EXACT 'YYYYMMDD' expiry as given by chain_info (no dashes).
-2) Only processes near-the-money strikes (±20% around current spot) 
-   to avoid massive lists of nonexistent strikes.
-3) Qualifies each (expiry, strike) with reqContractDetails(...) 
-   and requests MktData if details exist => real contract.
-4) If we get error 200 => skip that strike.
-5) Plots the 3D PnL surface with block=True so you see it.
-6) Freed from daily rolling backtest or other complexities. 
-   The goal is a robust short put evaluation with minimal “no security” noise.
-
+ionq_options_model.py
 Usage:
-  python ionq_options_model_strict.py
+  python ionq_options_model.py
 """
 
 import os

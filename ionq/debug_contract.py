@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-debug_qualify_contract.py
+debug_contract.py
 
 A small script to check if IBKR recognizes a specific IonQ option contract:
   - Expiry in 'YYYY-MM-DD' format (not 'YYYYMMDD')
